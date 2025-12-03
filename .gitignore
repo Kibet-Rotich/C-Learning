@@ -1,0 +1,24 @@
+# Compiled source files
+*.out
+*.o
+*.obj
+*.exe
+
+# Precompiled headers
+*.gch
+
+# Debug files
+*.pdb
+*.idb
+*.ilk
+
+# DLLs
+*.dll
+
+# Backup / temporary files
+*~
+*.tmp
+*.log
+
+# Windows metadata
+Thumbs.db
