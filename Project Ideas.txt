@@ -1,0 +1,7 @@
+REST API
+http server
+http library
+redis
+implement tcp and other protocols
+implement shell
+simple db engine
