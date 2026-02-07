@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Compiled source files
 *.out
 *.o
@@ -22,3 +23,7 @@
 
 # Windows metadata
 Thumbs.db
+=======
+*.out
+*.pdf
+>>>>>>> c-practice
