@@ -1,0 +1,161 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usetikzlibrary{automata, positioning}
+
+\title{LR(0) Analysis for the Given Grammar}
+\author{}
+\date{}
+
+\begin{document}
+
+\section*{Grammar}
+Non-terminals: \( N = \{S, E, A\} \)
+
+Terminals: \( T = \{\text{id}, ;, =, \$\} \) (where \$ is the end-marker)
+
+Productions:
+\begin{enumerate}
+    \item \( S \to E \$ \)
+    \item \( E \to E ; A \)
+    \item \( E \to A ; \)
+    \item \( A \to \text{id} \)
+    \item \( A \to A = A \)
+\end{enumerate}
+
+\subsection*{a) LR(0) Item Sets and CFSM (DFA)}
+
+The canonical collection of LR(0) item sets is:
+
+\begin{align*}
+I_0 &= \text{closure}(\{[S \to .E \$]\}) \\
+    &= \left\{ 
+    \begin{array}{l}
+    S \to .E \$ \\
+    E \to .E ; A \\
+    E \to .A ; \\
+    A \to .\text{id} \\
+    A \to .A = A
+    \end{array}
+    \right\} \\[1em]
+I_1 &= \text{goto}(I_0, E) = \left\{ 
+    \begin{array}{l}
+    S \to E.\$ \\
+    E \to E.; A
+    \end{array}
+    \right\} \\[1em]
+I_2 &= \text{goto}(I_0, A) = \left\{ 
+    \begin{array}{l}
+    E \to A.; \\
+    A \to A.= A
+    \end{array}
+    \right\} \\[1em]
+I_3 &= \text{goto}(I_0, \text{id}) = \{ A \to \text{id}. \} \\[1em]
+I_4 &= \text{goto}(I_1, ;) = \left\{ 
+    \begin{array}{l}
+    E \to E;.A \\
+    A \to .\text{id} \\
+    A \to .A = A
+    \end{array}
+    \right\} \\[1em]
+I_5 &= \text{goto}(I_2, ;) = \{ E \to A;. \} \\[1em]
+I_6 &= \text{goto}(I_2, =) = \left\{ 
+    \begin{array}{l}
+    A \to A=.A \\
+    A \to .\text{id} \\
+    A \to .A = A
+    \end{array}
+    \right\} \\[1em]
+I_7 &= \text{goto}(I_4, A) = \left\{ 
+    \begin{array}{l}
+    E \to E;A. \\
+    A \to A.= A
+    \end{array}
+    \right\} \\[1em]
+I_8 &= \text{goto}(I_6, A) = \left\{ 
+    \begin{array}{l}
+    A \to A=A. \\
+    A \to A.= A
+    \end{array}
+    \right\} \\[1em]
+I_9 &= \text{goto}(I_1, \$) = \{ S \to E\$. \}
+\end{align*}
+
+Other important \texttt{goto} steps (for completeness):
+\begin{itemize}
+    \item \texttt{goto}(I_4, \text{id}) = I_3
+    \item \texttt{goto}(I_6, \text{id}) = I_3
+    \item \texttt{goto}(I_7, =) = I_6
+    \item \texttt{goto}(I_8, =) = I_6
+\end{itemize}
+
+\textbf{CFSM Diagram (textual representation):}
+\begin{verbatim}
+I0 ──E──> I1 ──$──> I9 (accept state)
+ │
+ ├──A──> I2 ──;──> I5 (reduce 3)
+ │      │
+ │      └──=──> I6 ──id──> I3 (reduce 4)
+ │             │
+ │             └──A──> I8
+ │
+ ├──id──> I3
+ │
+ └──(via I4 and I6) other paths
+\end{verbatim}
+
+(Tikz drawing would look like a standard DFA graph with 10 states and the transitions listed above.)
+
+\subsection*{b) LR(0) Parsing Table}
+
+States are numbered 0 to 9 corresponding to \(I_0\)--\(I_9\).
+
+\begin{center}
+\begin{tabular}{c|cccc|ccc}
+\toprule
+State & \multicolumn{4}{c|}{Action} & \multicolumn{3}{c}{Goto} \\
+\cmidrule(lr){2-5} \cmidrule(lr){6-8}
+ & id & ; & = & \$ & S & E & A \\
+\midrule
+0 & s3 &   &   &   &   & 1 & 2 \\
+1 &    & s4&   & s9&   &   &   \\
+2 &    & s5& s6&   &   &   &   \\
+3 & r4 & r4& r4& r4&   &   &   \\
+4 & s3 &   &   &   &   &   & 7 \\
+5 & r3 & r3& r3& r3&   &   &   \\
+6 & s3 &   &   &   &   &   & 8 \\
+7 & r2 & r2& s6/r2 & r2 &   &   &   \\
+8 & r5 & r5& s6/r5 & r5 &   &   &   \\
+9 &    &   &   & acc&   &   &   \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Notation:
+\begin{itemize}
+    \item \texttt{sN} = shift to state N
+    \item \texttt{rN} = reduce by production N
+    \item \texttt{acc} = accept
+    \item blank = error
+\end{itemize}
+
+\subsection*{c) Nature of Conflicts}
+
+There are \textbf{shift/reduce conflicts} on terminal \texttt{=} in:
+\begin{itemize}
+    \item State 7 (\(I_7\)): reduce by (2) \(E \to E ; A\) vs shift to \(I_6\)
+    \item State 8 (\(I_8\)): reduce by (5) \(A \to A = A\) vs shift to \(I_6\)
+\end{itemize}
+
+These conflicts arise because:
+\begin{itemize}
+    \item The grammar is ambiguous (the production \(A \to A = A\) does not specify associativity).
+    \item LR(0) has no lookahead, so it cannot decide whether to reduce the left-recursive assignment or continue shifting for another \texttt{=}.
+    \item The language requires operator precedence/associativity (e.g., \texttt{=} should be right-associative) which LR(0) cannot resolve.
+\end{itemize}
+
+The grammar is \textbf{not LR(0)}.
+
+\end{document}
