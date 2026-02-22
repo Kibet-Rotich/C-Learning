@@ -1,29 +1,26 @@
-<<<<<<< HEAD
-# Compiled source files
+# Compiled binaries (No extension)
+*
+!*.*
+!*/
+
+# Specific compiled formats
 *.out
 *.o
 *.obj
 *.exe
-
-# Precompiled headers
 *.gch
 
-# Debug files
-*.pdb
-*.idb
-*.ilk
-
-# DLLs
-*.dll
-
-# Backup / temporary files
-*~
-*.tmp
-*.log
-
-# Windows metadata
+# OS files
+.DS_Store
 Thumbs.db
-=======
-*.out
-*.pdf
->>>>>>> c-practice
+
+# Keep these extensions
+!*.c
+!*.cpp
+!*.h
+!*.hpp
+!*.pdf
+!*.txt
+!*.md
+!*.tex
+!*.sh
