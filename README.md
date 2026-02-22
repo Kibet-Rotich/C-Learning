@@ -37,10 +37,13 @@ A command-line application using a **Binary Search Tree** to store and search co
 - **Complexity:** $O(\log n)$ average time for search and insertion.
 - **Features:** Alphabetical insertion using `strcmp`, In-order DFS traversal for listing, and manual Post-order heap memory cleanup.
 
+### 📝 [Student Ledger (C)](./student%20ledger.c)
+A persistent storage application demonstrating the use of the **Standard I/O Library** (`stdio.h`).
+- **Features:** File stream management using `fopen`, `fprintf`, and `getc`.
+- **Persistence:** Appends records to a `.txt` database, allowing data to survive between program executions.
+
 ### 🔢 [Vector Simulation (C++)](./vector%20simulation.cpp)
 A custom implementation of a dynamic array, mimicking the behavior of `std::vector` to understand how the STL manages capacity and resizing.
-
----
 
 ## 🛠 Toolset & Workflow
 
@@ -68,5 +71,6 @@ My goal is to complete the K&R curriculum and then transition those low-level sk
 ## 🙌 Contributions & Learning
 
 This is a living documentation of my computer science journey at JKUAT. Feedback on my pointer logic or memory management is always appreciated!
+
 
 ⭐ If you find this helpful, consider starring the repo!
