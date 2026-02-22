@@ -1,129 +1,72 @@
-# 🌟 C++ Learning Journey
+# 🌟 Low-Level Programming & Data Structures Journey
 
-![Banner](https://via.placeholder.com/1200x300.png?text=C%2B%2B+Learning+Journey+Repo)
+![Banner](https://via.placeholder.com/1200x300.png?text=C+and+C%2B%2B+Deep+Dive)
 
 <p align="center">
-    <img src="https://img.shields.io/badge/Language-C%2B%2B-blue?style=for-the-badge" />
-    <img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge" />
-    <img src="https://img.shields.io/badge/Learning-Continuous-orange?style=for-the-badge" />
-    <img src="https://img.shields.io/badge/Contributions-Welcome-brightgreen?style=for-the-badge" />
+    <img src="https://img.shields.io/badge/Languages-C%20%7C%20C%2B%2B-blue?style=for-the-badge" />
+    <img src="https://img.shields.io/badge/Focus-Memory%20Management-red?style=for-the-badge" />
+    <img src="https://img.shields.io/badge/Status-K%26R%20Deep%20Dive-success?style=for-the-badge" />
 </p>
 
-Welcome to my **C++ Learning Repository** — a collection of all the programs, practice tasks, and small projects I've written while learning C++ from the ground up.
+Welcome to my learning repository. While I initially started with **C++**, I decided to take a step back into **C** to build a rock-solid understanding of memory management, pointers, and the "under-the-hood" mechanics that make C++ so powerful.
 
-This repo documents my progress from **basic syntax** → **pointers** → **structs** → **dynamic memory** → **custom data structures**, and more.
-
----
-
-## 📁 Project Structure
-
-The repository contains the following categories of programs:
-
-### 🔹 Beginner Level
-- Basic calculations & input/output  
-- Simple loops and conditionals  
-- Array operations  
-
-### 🔹 Intermediate Level  
-- Pointer manipulation  
-- References and memory concepts  
-- Dynamic arrays  
-- Structs and basic data models  
-
-### 🔹 Advanced Beginner / Early Intermediate  
-- Simulated vector implementation  
-- Dynamic struct arrays  
-- Small console applications:
-  - Contact App  
-  - Student Database  
-  - Todo List App  
-  - Word Counter  
-  - Character Frequency Counter  
+This repo documents my path through the **K&R (Kernighan & Ritchie)** curriculum and my implementation of fundamental data structures from scratch.
 
 ---
 
-## 🧱 Key Learning Areas
+## 📁 Project Roadmap
 
-### ✔️ Pointers & References  
-Understanding:
-- Pointer basics  
-- Pointer arithmetic  
-- Dynamic memory allocation (`new`, `delete`)  
+### 🏛️ The C Foundation (K&R Progress)
+- **Basic Syntax & Types:** Operators, loops, and control flow.
+- **Functions & Program Structure:** External variables and scope.
+- **Pointers & Arrays:** Deep dive into pointer arithmetic and memory addresses.
+- **Structures:** Building custom data types and complex models.
+- **Input/Output:** Mastering `stdio.h` and file streams.
 
-### ✔️ Structs  
-- Creating custom data types  
-- Managing arrays of structs  
-- Dynamic struct allocation  
-
-### ✔️ Data Structure Simulations  
-- Building a mini vector  
-- Implementing simple dynamic lists  
+### 🏗️ Data Structures from Scratch
+- **Binary Search Trees (BST):** Alphabetical Contact Management System with `malloc` and recursion.
+- **Dynamic Lists:** Custom implementations of resizable arrays.
+- **Memory Management:** Safe allocation/deallocation using `malloc`, `free`, `new`, and `delete`.
 
 ---
 
-## 🗂️ Files Included
+## 🧱 Key Projects
 
-Your repo includes **over 50 C++ source files**, covering:
+### 📱 [BST Phonebook (C)](./phonebook.c)
+A command-line application using a **Binary Search Tree** to store and search contacts.
+- **Complexity:** $O(\log n)$ average time for search and insertion.
+- **Features:** Alphabetical insertion using `strcmp`, In-order DFS traversal for listing, and manual Post-order heap memory cleanup.
 
-- `*.cpp` — source code  
+### 🔢 [Vector Simulation (C++)](./vector%20simulation.cpp)
+A custom implementation of a dynamic array, mimicking the behavior of `std::vector` to understand how the STL manages capacity and resizing.
 
-## 🛠 How to Run
+---
 
-1. Compile
+## 🛠 Toolset & Workflow
+
+- **Compiler:** `gcc` for C, `g++` for C++.
+- **Environment:** Linux/Unix-based CLI.
+- **Memory Safety:** Manual tracking of heap allocations to prevent memory leaks (checked via `freeTree` logic).
 
 ```bash
-g++ filename.cpp -o output
+# To compile the C Phonebook
+gcc phonebook.c -o phonebook
+./phonebook
 ```
 
-2. Run
+## 🎯 The Vision
 
-```bash
-./output
-```
+> "To understand C++ at a deeper level, one must first respect the power of C."
 
-Examples:
+My goal is to complete the K&R curriculum and then transition those low-level skills into Modern C++ (C++11/14/17/20), focusing on:
 
-```bash
-g++ "Todo list App.cpp" -o todo
-./todo
-```
+- **RAII** (Resource Acquisition Is Initialization)
+- **Smart Pointers** (Unique, Shared)
+- **Templates & Meta-programming**
+- **The STL Architecture**
 
----
+## 🙌 Contributions & Learning
 
-## 🚀 Goals of This Repository
+This is a living documentation of my computer science journey at JKUAT. Feedback on my pointer logic or memory management is always appreciated!
 
-- Track my C++ progress  
-- Practice clean, readable code  
-- Prepare for more advanced concepts:
-  - OOP  
-  - Templates  
-  - Standard Template Library (STL)  
-  - Memory management in depth  
-  - Building real applications  
-
----
-
-## 🎯 Next Steps in My Learning Journey
-
-After mastering pointers & structs, I will move on to:
-
-- **Object-Oriented Programming** (Classes, inheritance, polymorphism)
-- **STL Mastery** (vectors, maps, sets, algorithms)
-- **File handling**
-- **Building larger C++ systems**
-
----
-
-## 🙌 Contributions
-
-This repo is primarily for personal learning, but feedback and suggestions are always welcome!
-
----
-
-## 📬 Contact
-
-Feel free to reach out if you'd like to collaborate or comment on any code.
-
----
-
-### ⭐ If you find this helpful, consider starring the repo!  
+⭐ If you find this helpful, consider starring the repo!
