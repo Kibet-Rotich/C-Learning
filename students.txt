@@ -1,0 +1,6 @@
+
+ID: 89 | Name: Asbel rotich    | GPA: 3.40
+ID: 76 | Name: Eulitah         | GPA: 9.70
+ID: 45 | Name: rotich          | GPA: 7.90
+ID: 65 | Name: Rogerio         | GPA: 3.20
+ID: 67 | Name: centio          | GPA: 5.00
