@@ -32,17 +32,17 @@ This repo documents my path through the **K&R (Kernighan & Ritchie)** curriculum
 
 ## 🧱 Key Projects
 
-### 📱 [BST Phonebook (C)](./phonebook.c)
+### 📱 [BST Phonebook (C)](./C/phonebook.c)
 A command-line application using a **Binary Search Tree** to store and search contacts.
 - **Complexity:** $O(\log n)$ average time for search and insertion.
 - **Features:** Alphabetical insertion using `strcmp`, In-order DFS traversal for listing, and manual Post-order heap memory cleanup.
 
-### 📝 [Student Ledger (C)](./student%20ledger.c)
+### 📝 [Student Ledger (C)](./C/student%20ledger.c)
 A persistent storage application demonstrating the use of the **Standard I/O Library** (`stdio.h`).
 - **Features:** File stream management using `fopen`, `fprintf`, and `getc`.
 - **Persistence:** Appends records to a `.txt` database, allowing data to survive between program executions.
 
-### 🔢 [Vector Simulation (C++)](./vector%20simulation.cpp)
+### 🔢 [Vector Simulation (C++)](./C++/vector%20simulation.cpp)
 A custom implementation of a dynamic array, mimicking the behavior of `std::vector` to understand how the STL manages capacity and resizing.
 
 ## 🛠 Toolset & Workflow
