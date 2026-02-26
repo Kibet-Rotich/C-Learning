@@ -1,6 +1,5 @@
 # 🌟 Low-Level Programming & Data Structures Journey
 
-![Banner](https://via.placeholder.com/1200x300.png?text=C+and+C%2B%2B+Deep+Dive)
 
 <p align="center">
     <img src="https://img.shields.io/badge/Languages-C%20%7C%20C%2B%2B-blue?style=for-the-badge" />
@@ -32,7 +31,7 @@ This repo documents my path through the **K&R (Kernighan & Ritchie)** curriculum
 
 ## 🧱 Key Projects
 
-### 📈 [Linear Regression with C & Python Interface](../Linear%20regression/README.md)
+### 📈 [Linear Regression with C & Python Interface](./Linear%20regression/README.md)
 A hybrid project showcasing a **linear regression algorithm implemented in C** with a Python test script for interfacing.
 - **Features:** Train a linear regression model and predict outcomes using the compiled C code.
 - **Interoperability:** Includes a `test.py` script demonstrating how to call the C functions from Python, combining C performance with Python flexibility.
@@ -79,3 +78,4 @@ This is a living documentation of my computer science journey at JKUAT. Feedback
 
 
 ⭐ If you find this helpful, consider starring the repo!
+
