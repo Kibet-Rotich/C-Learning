@@ -32,6 +32,11 @@ This repo documents my path through the **K&R (Kernighan & Ritchie)** curriculum
 
 ## 🧱 Key Projects
 
+### 📈 [Linear Regression with C & Python Interface](../Linear%20regression/README.md)
+A hybrid project showcasing a **linear regression algorithm implemented in C** with a Python test script for interfacing.
+- **Features:** Train a linear regression model and predict outcomes using the compiled C code.
+- **Interoperability:** Includes a `test.py` script demonstrating how to call the C functions from Python, combining C performance with Python flexibility.
+
 ### 📱 [BST Phonebook (C)](./C/phonebook.c)
 A command-line application using a **Binary Search Tree** to store and search contacts.
 - **Complexity:** $O(\log n)$ average time for search and insertion.

@@ -9,6 +9,8 @@
 *.obj
 *.exe
 *.gch
+*.so
+*Ideas.txt
 
 # OS files
 .DS_Store
